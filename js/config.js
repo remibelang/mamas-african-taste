@@ -1,7 +1,7 @@
 // API Configuration - switches between local and production
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:5000'
-    : 'https://mamas-african-taste-api.onrender.com'; // Change this after deploying backend
+    : 'https://mamas-african-taste-api.onrender.com';
 
 // Helper function for API calls
 async function apiCall(endpoint, options = {}) {
@@ -12,7 +12,6 @@ async function apiCall(endpoint, options = {}) {
         }
     };
     
-    // Add auth token if available
     const token = localStorage.getItem('adminToken');
     if (token) {
         defaultOptions.headers['Authorization'] = 'Bearer ' + token;
